@@ -6,6 +6,14 @@
 \usage{
 optimal_topics(dtm)
 }
-\description{
-Determine Optimal Topics
+\arguments{
+\item{dtm}{document-term matrix}
 }
+\description{
+This function allows you to analyze document term matrix for latent structures
+}
+\examples{
+optimal_topics()
+}
+\keyword{optimal}
+\keyword{topics}
