@@ -17,4 +17,14 @@ optimal_topics <- function(dtm){
     mc.cores = 2L, #make sure this is appropriate number of cores you wish to use
     verbose = TRUE
   )
+  values <- results
+  # normalize to [0,1]
+  columns <- base::subset(values, select = 2:ncol(values))
+  values <- base::data.frame(
+    values["topics"],
+    base::apply(columns, 2, function(column) {
+      scales::rescale(column, to = c(0, 1), from = range(column))
+    })
+  )
+  return(values)
 }

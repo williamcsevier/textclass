@@ -3,6 +3,8 @@ library(shinythemes)
 library(tidytext)
 library(dplyr)
 library(textclass)
+library(tidyverse)
 library(tm)
+library(topicmodels)
 
 ITdata <- readRDS("IT_total.RDS")
