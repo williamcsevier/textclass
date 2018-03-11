@@ -2,7 +2,7 @@ textclass
 ================
 Charter Sevier
 
-[![Build Status](https://travis-ci.org/hadley/devtools.svg?branch=master)](https://travis-ci.org/williamcsevier/TextML)
+[![Build Status](https://travis-ci.org/hadley/devtools.svg?branch=master)](https://travis-ci.org/williamcsevier/textclass)
 
 This package provides a tool to simply automate text analytics in interpretable graphical output.
 
