@@ -9,12 +9,12 @@ tidyDTM(text.df, sparse)
 \arguments{
 \item{text.df}{text data}
 
-\item{sparse}{sparsity trimmed}
+\item{sparse}{sparsity for which to trim document term matrix}
 }
 \description{
 This function allows you to analyze document term matrix for latent structures
 }
 \examples{
-tidyDTM()
+tidyDTM(data, 0.98)
 }
 \keyword{dtm}

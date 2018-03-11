@@ -13,7 +13,8 @@ optimal_topics(dtm)
 This function allows you to analyze document term matrix for latent structures
 }
 \examples{
-optimal_topics()
+optimal_topics(dtm)
 }
+\keyword{lda}
 \keyword{optimal}
 \keyword{topics}

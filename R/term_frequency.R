@@ -1,4 +1,13 @@
-term_frequency <- function(data,n){
+#' @title N-gram term frequency for AFICA contract data
+#'
+#' @description This function allows you to analyze n-gram term frequency for AFICA contract descriptions
+#' @param data data frame where text has column name "description"
+#' @param n number of n-grams for frequency analysis (n=1 for single term frequency)
+#' @keywords n-gram
+#' @export
+#' @examples
+#' term_frequency(data, 2)
+term_frequency <- function(data,n = 1){
 sw <- add_row(stop_words, word = c("igf","ot", "ct"), lexicon = c("SMART", "SMART", "SMART"))
 
 if(n == 2){

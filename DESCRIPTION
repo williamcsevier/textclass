@@ -1,12 +1,22 @@
 Package: textclass
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Analytical Tool for Automated Text Analysis with Interpretable Graphical Output
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Date: 2018-11-03
+Author: Charter Sevier
+Maintainer: Charter Sevier <williamcsevier@gmail.com>
+Description: The package will be able to accept .csv files containing text data and perform various text analysis procedures, with options to return the raw data for further manipulation, or ggplot graphics of the text analysis methods. This allows the user to easily analyze their text data without having to do any of the required preprocessing. In addition, even the most novice of data scientists can portray their text analysis results cleanly, with limited knowledge of R. 
+    Specifically, this package will give the user options to output most frequent terms, n-gram analysis, and topic modeling analysis. Topic modeling involved allowing the user to determine how many topics with which to model their topics, and output the most associated terms with each topics, as well word-word correlation, and document-topic association. 
+License: GPL (>=2)
 Encoding: UTF-8
 LazyData: true
+Depends: R (>= 2.10)
+Imports:
+    tidytext,
+    dplyr,
+    tidyverse,
+    tm,
+    topicmodels,
+    ldatuning
 RoxygenNote: 6.0.1.9000
+Suggests: testthat

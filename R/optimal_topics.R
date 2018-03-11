@@ -1,11 +1,11 @@
-#' Determine Optimal Topics
+#' @title Determine Optimal Topics
 #'
-#'This function allows you to analyze document term matrix for latent structures
+#' @description This function allows you to analyze document term matrix for latent structures
 #' @param dtm document-term matrix
-#' @keywords optimal topics
+#' @keywords optimal lda topics
 #' @export
 #' @examples
-#' optimal_topics()
+#' optimal_topics(dtm)
 
 optimal_topics <- function(dtm){
   result <- FindTopicsNumber(

@@ -1,3 +1,11 @@
+#' @title Plots Optimal Topic Analysis from Normalized Optimal Topic Values
+#'
+#' @description This function allows you to to plot the normalized Cao and Deveaud normalized latent structure values
+#' @param values normalized cao and deveaud optimal topics output
+#' @keywords plot optimal topics
+#' @export
+#' @examples
+#' plot_optimal_topics(optimal_topics_norm_values)
 plot_optimal_topics <- function(values){
 plt <-   ggplot(values, aes(x=topics)) +
     labs(title="Structure Analysis per Topic Number", x="Number of Topics", y="Normalized Metric", colour = "Metric") +

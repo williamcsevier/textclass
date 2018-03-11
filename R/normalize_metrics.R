@@ -1,6 +1,6 @@
-#' Normalize Optimal Topic Metrics
+#' @title Normalize Optimal Topic Metrics
 #'
-#'This function allows you to normalize the output from optimal topic analysis
+#' @description This function allows you to normalize the output from optimal topic analysis
 #' @param values optimal topics results
 #' @keywords normalize
 #' @export

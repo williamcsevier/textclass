@@ -1,3 +1,11 @@
+#' @title Plots Topic Models from Latent Dirichlet Allocation Model
+#'
+#' @description This function allows you to analyze topic models from an Latent Dirichlet Allocation model
+#' @param lda latent dirichlet allocation model
+#' @keywords lda topic model
+#' @export
+#' @examples
+#' plot_topics(lda)
 plot_topics <- function(lda) {
 topics <- tidy(lda, matrix = "beta")
 top_terms <- topics %>%
