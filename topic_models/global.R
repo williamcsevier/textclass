@@ -6,5 +6,6 @@ library(textclass)
 library(tidyverse)
 library(tm)
 library(topicmodels)
+library(ldatuning)
 
 ITdata <- readRDS("IT_total.RDS")
