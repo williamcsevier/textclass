@@ -1,0 +1,17 @@
+base
+tidytext
+dplyr
+tidyverse
+ggplot2
+tibble
+tidyr
+readr
+purrr
+stringr
+forcats
+NLP
+tm
+topicmodels
+ldatuning
+textclass
+bindrcpp

@@ -2,16 +2,26 @@ textclass
 ================
 Charter Sevier
 
-[![Build Status](https://travis-ci.org/hadley/devtools.svg?branch=master)](https://travis-ci.org/williamcsevier/textclass)
+[![Build Status](https://travis-ci.org/hadley/devtools.svg?branch=master)](https://travis-ci.org/williamcsevier/textclass.svg?branch=master)
+
+How to load:
+
+`devtools::install_github("williamcsevier/textclass", dependencies = TRUE, build_vignettes = TRUE)`
+
+Accompanying this package is a Shiny App for AFICA Information Technology contract text analysis:
+
+<https://charterapps.shinyapps.io/afica_topic_modeling_and_text_analysis/>
 
 This package provides a tool to simply automate text analytics in interpretable graphical output.
 
 Description
 -----------
 
-The package will be able to accept .csv files containing text data and perform various text analysis procedures, with options to return the raw data for further manipulation, or ggplot graphics of the text analysis methods. This allows the user to easily analyze their text data without having to do any of the required preprocessing. In addition, even the most novice of data scientists can portray their text analysis results cleanly, with limited knowledge of R.
+The package will be able to accept dataframes or tibbles containing text data and perform various text analysis procedures, with options to return the raw data for further manipulation, or ggplot graphics of the text analysis methods. This allows the user to easily analyze their text data without having to do any of the required preprocessing. In addition, even the most novice of data scientists can portray their text analysis results cleanly, with limited knowledge of R.
 
 Specifically, this package will give the user options to output most frequent terms, n-gram analysis, and topic modeling analysis. Topic modeling involved allowing the user to determine how many topics with which to model their topics, and output the most associated terms with each topics, as well word-word correlation, and document-topic association.
+
+A shiny app was developed for AFICA analysts to accomplish exploratory text analysis to accompany my thesis research.
 
 End-user
 --------
@@ -44,7 +54,7 @@ This analytic utilizes the tidytext package for tidy-form representation of LDA 
 How to access package?
 ----------------------
 
-The end-user will access TextML through github using devtools. williamcsevier/TextML
+The end-user will access textclass through github using devtools. williamcsevier/textclass
 
 There are no security concerns
 

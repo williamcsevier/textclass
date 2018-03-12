@@ -1,0 +1,12 @@
+name: afica_topic_modeling_and_text_analysis
+title: AFICA Topic Modeling and Text Analysis
+username:
+account: charterapps
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 297654
+bundleId: 1263793
+url: https://charterapps.shinyapps.io/afica_topic_modeling_and_text_analysis/
+when: 1520819825.45176
+asMultiple: FALSE
+asStatic: FALSE

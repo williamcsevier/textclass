@@ -15,7 +15,7 @@ rank_topics <- function (values){
     mutate(Rank = as.integer(rank(Sum)))
 
   optimal_topics_ranked <- topics_collapsed_ranked %>%
-    dplyr::select(topics, Griffiths2004, CaoJuan2009, Arun2010, Deveaud2014,Rank) %>%
+    dplyr::select(topics, CaoJuan2009,  Deveaud2014,Rank) %>%
     top_n(5, -Rank) %>%
     arrange(Rank)
 

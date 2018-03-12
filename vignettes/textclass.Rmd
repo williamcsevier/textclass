@@ -9,40 +9,73 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup, include = FALSE}
+```{r setup, include = FALSE, cache=TRUE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
 ```
+This vignette outlines the intended use of the textclass package in its current form. The package is able to:
 
+- Create Document-Term Matrices in tidy form
+- Evaluate Term Frequency and N-gram Frequency
+- Graphically portray latent topic metrics for each number of topics 2 to 30
+  - Return raw Cao and Deveaud metrics
+  - Return normalized metrics
+  - Rank order the metrics to show list of potential optimal topic candidates
+- Model Topics for given number of topics, K
 
-## Figures
+## Provided Data
 
-The figure sizes have been customised so that you can easily put two images side-by-side. 
+  This package includes `AFICAdata` dataset. It is a dataframe of all Information Technology contracts for installation support from Air Force Installation Contracting Agency.
 
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+## term_frequency
+
+  The `term_frequency` function allows the user to plot term or n-gram frequency depending on how many consecutive terms (`n`) for which they wish to evaluate term frequency.
+
+```{r, echo = FALSE}
+library(textclass)
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
+```{r, echo = TRUE}
+term_frequency(AFICAdata, n=3)
+```
+## tidyDTM
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
+The `tidyDTM` function allows the user to construct a dtm for a given sparsity. 
 
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
+```{r, echo = TRUE}
+#tidyDTM(data, sparsity)
+dtm <- tidyDTM(AFICAdata, 0.98)
+dtm
+```
 
-## More Examples
 
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
+## plot_topics
+
+The `plot_topics` function allows the user to plot the topic models from a Latent Dirichlet Allocation (LDA) model. This plot shows the most associated (beta) terms with each of the topics. The `LDA` function is an external function for which the user can create the LDA model and define the number of topics requested.
+
+```{r, echo = TRUE}
+lda <- LDA(dtm, k = 4)
+plot_topics(lda)
+```
+
+## optimal_topics, normalize_metrics, and plot_optimal_topics
+
+The functions `optimal_topics`, `normalize_metrics`, and `plot_optimal_topics`allow the use to evaluate the structure of topics for every number of topics k from 2 to 30. The metrics used are those proposed by Cao and Deveaud. Cao is a metric that needs to be minimized for optimality, while Deveaud is intended to be maximized. This takes very long without a quad-core computer. Fortunately, included with the package is pre-calculated optimal topic data, `topic_data`.
 
 ```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
+
+#returns raw values for optimal topic analysis
+#values <- optimal_topics(dtm)
+values <- topic_data
+
+#normalizes the values
+norm_values <- normalize_metrics(values)
+#plots the optimal topic analysis metrics
+plot_optimal_topics(norm_values)
+#creates a table of rank ordered topic numbers
+rank_topics(norm_values)
 ```
 
-Also a quote using `>`:
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))

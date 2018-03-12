@@ -29,9 +29,12 @@ if(sparse >.001 | sparse < 0.999){
 
   dtm$dimnames$Terms <- gsub("function", "functio", dtm$dimnames$Terms)
 
-  dtmNoSparse <- removeSparseTerms(dtm, sparse)
+  dtm <- removeSparseTerms(dtm, sparse)
 
-  return(dtmNoSparse)
+  rowTotals <- apply(dtm , 1, sum) #Find the sum of words in each Document
+  dtm <- dtm[rowTotals> 0, ]           #remove all docs without words
+
+  return(dtm)
 }
   stop('sparse parameter must be between .001 and .999 (recommended between .8 and .999)')
 }
