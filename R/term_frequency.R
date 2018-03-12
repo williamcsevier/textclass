@@ -55,6 +55,7 @@ else{
 
 plt <- ggplot(plt, aes(reorder(word, n), n)) +
   geom_bar(stat = "identity") +
+  ggtitle("N-gram Frequency")+
   xlab("Term") +
   ylab("Count") +
   coord_flip()

@@ -1,7 +1,7 @@
 #' @title Constructing DTM for AFICA data
 #'
 #' @description This function allows you to analyze document term matrix for latent structures
-#' @param text.df text data frame or tibble with "description" as text data column name
+#' @param data text data frame or tibble with "description" as text data column name
 #' @param sparse sparsity for which to trim document term matrix (must be between .001 and .999)
 #' @keywords dtm
 #' @export
@@ -13,11 +13,11 @@ if(!is.numeric(sparse)){
   stop ('sparse parameter must be numeric')
 }
 
-if(sparse <.001 | sparse > 0.999){
+if(sparse >.001 | sparse < 0.999){
   sw <- add_row(stop_words, word = c("igf","ot", "ct"), lexicon = c("SMART", "SMART", "SMART"))
 
   #word counts
-  word_counts <- text.df %>%
+  word_counts <- data %>%
     unnest_tokens(word, description) %>%
     anti_join(sw) %>%
     count(document, word, sort = TRUE) %>%
@@ -33,5 +33,5 @@ if(sparse <.001 | sparse > 0.999){
 
   return(dtmNoSparse)
 }
-  stop('sparse parameter must be between .001 and .999 (recommended between .8 and .999')
+  stop('sparse parameter must be between .001 and .999 (recommended between .8 and .999)')
 }

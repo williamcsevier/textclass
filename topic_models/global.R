@@ -7,5 +7,9 @@ library(tidyverse)
 library(tm)
 library(topicmodels)
 library(ldatuning)
+library(ggraph)
+library(igraph)
 
-ITdata <- readRDS("IT_total.RDS")
+ITdata <- AFICAdata
+sw <- add_row(stop_words, word = c("igf","ot", "ct"), lexicon = c("SMART", "SMART", "SMART"))
+

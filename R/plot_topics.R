@@ -25,7 +25,8 @@ plt <- ggplot(top_terms,aes(.r, beta,
   scale_x_continuous(
     breaks = top_terms$.r,
     labels = top_terms$term)+
-  xlab("term")+
+  xlab("term") +
+  ggtitle("Topic Models") +
   coord_flip()
 
 return(plt)
