@@ -1,0 +1,47 @@
+---
+title: "Review of textclass"
+author: "Rachel Ramirez"
+date: "March 12, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Accuracy
+
+ 
+## Are the results accurate?
+
+The results appear accurate, and match the vignette.
+
+## Is it clear how the results were computed?
+
+To a novice, it is not entirely obvious *how* the results are computed as the topic and terminology are complex (example: "The tidyDTM function allows the user to construct a dtm for a given sparsity."), one already has to be familiar with the textmining terminology, which they probably are if they downloaded the package.  But the vignette is detailed and clear on each function.   
+
+# Compilation
+
+## Did the analytic work? (i.e. install correctly, startup correctly)
+
+After reading the instructions and using `devtools::install_github("williamcsevier/textclass", dependencies = TRUE, build_vignettes = TRUE)` the analytic worked perfectly.
+
+
+## Were errors encountered when executing code according to the documentation?
+
+No.
+
+# Ease of use
+
+## Is it clear how to use the analytic? (i.e. is the documentation clear)
+
+If I was to get a little more experienced on topic-modeling and text-modeling it seems like this would be a pretty cool tool.  The app on shinyapps is also cool.
+
+
+## Are the visualizations/plots interpretable? 
+
+Yes the visualizations and plots are very good.
+
+# Overall the analytic seems Outstanding – ready to publish/deploy (50 pts)
+
+
