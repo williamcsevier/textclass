@@ -2,7 +2,7 @@ textclass
 ================
 Charter Sevier
 
-[![Build Status](https://travis-ci.org/hadley/devtools.svg?branch=master)](https://travis-ci.org/williamcsevier/textclass.svg?branch=master)
+[![Build Status](https://travis-ci.org/williamcsevier/textclass.svg?branch=master)](https://travis-ci.org/williamcsevier/textclass)
 
 How to load:
 
