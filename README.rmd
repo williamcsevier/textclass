@@ -11,16 +11,20 @@ knitr::opts_chunk$set(echo = TRUE)
 
 [![Build Status](https://travis-ci.org/williamcsevier/textclass.svg?branch=master)](https://travis-ci.org/williamcsevier/textclass)
 
+
+This package provides a tool to simply automate text analytics in interpretable graphical output.
+
 How to load:
 
 `devtools::install_github("williamcsevier/textclass", dependencies = TRUE, build_vignettes = TRUE)`
+
+`library(textclass)`
 
 Accompanying this package is a Shiny App for AFICA Information Technology contract text analysis:
 
 https://charterapps.shinyapps.io/afica_topic_modeling_and_text_analysis/
 
-
-This package provides a tool to simply automate text analytics in interpretable graphical output.
+`vignette("textclass")` will provide in detail information on how the package is intended to be used.
 
 ## Description
 

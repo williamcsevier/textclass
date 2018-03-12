@@ -9,7 +9,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup, include = FALSE, cache=TRUE}
+```{r setup, include = FALSE, cache=TRUE, message = FALSE, warning = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -40,6 +40,7 @@ library(textclass)
 ```{r, echo = TRUE}
 term_frequency(AFICAdata, n=3)
 ```
+
 ## tidyDTM
 
 The `tidyDTM` function allows the user to construct a dtm for a given sparsity. 
@@ -64,7 +65,7 @@ plot_topics(lda)
 
 The functions `optimal_topics`, `normalize_metrics`, and `plot_optimal_topics`allow the use to evaluate the structure of topics for every number of topics k from 2 to 30. The metrics used are those proposed by Cao and Deveaud. Cao is a metric that needs to be minimized for optimality, while Deveaud is intended to be maximized. This takes very long without a quad-core computer. Fortunately, included with the package is pre-calculated optimal topic data, `topic_data`.
 
-```{r, echo=FALSE, results='asis'}
+```{r, echo=TRUE}
 
 #returns raw values for optimal topic analysis
 #values <- optimal_topics(dtm)
@@ -74,6 +75,11 @@ values <- topic_data
 norm_values <- normalize_metrics(values)
 #plots the optimal topic analysis metrics
 plot_optimal_topics(norm_values)
+```
+
+As the Cao metric needs to be minimized to find optimality and the Deveaud metric maximized, this package provides a table using `rank_topics` that will rank order the topics by the best balance between the two metrics for the analyst to assess all possible points of optimality.
+
+```{r, echo = TRUE}
 #creates a table of rank ordered topic numbers
 rank_topics(norm_values)
 ```
