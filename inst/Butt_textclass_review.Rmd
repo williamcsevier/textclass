@@ -1,0 +1,60 @@
+---
+title: "Butt textclass Review"
+author: "Capt Spencer Butt"
+date: "March 12, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Review Date and Time
+
+* Review Date: 12 March 2018
+* Review Time: 1320
+
+## Accuracy
+
+  Each of the functions in the `textclass` was evaluated using the examples provided in the vignette. Overall, the vignette provides an excellent overview of the package and its functionality. 
+
+* `AFICAdata` dataset
+    + This dataset is well documented 
+    + No concerns with the dataset accuracy
+* `term_frequency()`
+    + Works as depicted in the vignette
+    + if `n` is too large, an appropriate error message is displayed to the user
+    + No concerns with `term_frequency()` accuracy
+* `tidyDTM()`
+    + Works as depicted in vignette
+    + No concerns with `tidyDTM()` accuracy
+* `plot_topics()`
+    + Works as depicted in vignette
+    + Performs as expected with differing values of `k`
+    + No concerns with `plot_topics()` accuracy
+* `normalize_metrics()`
+    + Works as depicted in vignette
+    + not clear where the `values` variable comes from
+    + Works with different `didyDTM` beta values
+    + No concerns with `normalize_metrics` accuracy
+* `plot_optimal_topics()`
+    + Works as depicted in vignette
+    + No concerns with plots displayed using `plot_optimal_topics()`
+* `rank_topics()`
+    + Works as depicted in vignette
+    + Works with different different `didyDTM` beta values
+    + No concerns with the ranks displayed using `rank_topics()`
+
+## Compliation
+
+`textclass` installs from github using `devtools::install_github` in documentation without error. The package runs with minor errors, however these errors are accompanied with explanations in the R console window. 
+
+## Ease of Use
+
+The `textclass` vignette makes the package easy to use. The functions in the package all have documentation that explains how they are used in this package. 
+
+## Final Thoughts
+
+I was unable to find any package-crashing errors. The code ran as expected, and error messages displayed in the console were well documented. Consider wrapping the package in a shiny app or shiny gadget to make it easier for non-programmers or individuals unfamiliar with R to use in an internet browser.
+
+**Recommended Grade: ** 49/50
